@@ -220,7 +220,6 @@ export const EditTransaction = () => {
 //DELETE
 export const DeleteTransaction = () => {
     const [labelid, setlabelid] = useState('');
-    console.log(labelid);
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -245,4 +244,26 @@ export const DeleteTransaction = () => {
         </div>
     );
 };
+//Calcualte Balance
 
+export const GetCalcualteBalance = () => {
+    const [balance, setBalance] = useState([]);
+    // run every 5 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            axios.get(`http://localhost:8080/balance/calculateBalance`)
+                .then(res => setBalance(res.data))
+                .catch(err => console.error(err));
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+    return (
+        <div>
+            {balance !== null ? (
+                <h2>Balance: ${Number(balance).toFixed(2)}</h2>
+            ) : (
+                <h2>Loading balance...</h2>
+            )}
+        </div >
+    );
+}

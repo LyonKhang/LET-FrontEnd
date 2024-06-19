@@ -1,14 +1,14 @@
 import React from "react";
-import { AddTransaction, GetTransaction, EditTransaction, DeleteTransaction } from '../funtions/Transaction';
+import { AddTransaction, GetTransaction, EditTransaction, DeleteTransaction, GetCalcualteBalance } from '../funtions/Transaction';
 
 export const Home = () => {
     return (
         <div>
+            <GetCalcualteBalance />
             <GetTransaction />
             <AddTransaction />
             <EditTransaction />
             <DeleteTransaction />
-            <h1>this runs!!!!</h1>
         </div>
     );
 };
