@@ -76,12 +76,20 @@ export const AddTransaction = () => {
                     value={product}
                     onChange={(e) => setProduct(e.target.value)}
                 />
-                <input
-                    type="text"
-                    placeholder="Name"
+                <select
+                    id="location"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                />
+                >
+                    <option value=""></option>
+                    <option value="online">Online</option>
+                    <option value="inperson">In-Person</option>
+                    <option value="subscription">Subscription</option>
+                    <option value="other">Other</option>
+                </select>
+                {location && (
+                    <p>You selected: {location}</p>
+                )}
                 <button type="submit">Submit</button>
             </form>
         </div>
