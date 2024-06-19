@@ -81,7 +81,7 @@ export const AddTransaction = () => {
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                 >
-                    <option value=""></option>
+                    <option value="none">None</option>
                     <option value="online">Online</option>
                     <option value="inperson">In-Person</option>
                     <option value="subscription">Subscription</option>
@@ -201,12 +201,17 @@ export const EditTransaction = () => {
                     value={product}
                     onChange={(e) => setProduct(e.target.value)}
                 />
-                <input
-                    type="text"
-                    placeholder="Name"
+                <select
+                    id="location"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                />
+                >
+                    <option value="none">None</option>
+                    <option value="online">Online</option>
+                    <option value="inperson">In-Person</option>
+                    <option value="subscription">Subscription</option>
+                    <option value="other">Other</option>
+                </select>
                 <button type="submit">Update</button>
             </form>
         </div>
