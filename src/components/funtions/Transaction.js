@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import '../css/Transaction.css'
 
 console.log("this run");
 
@@ -112,13 +113,30 @@ export const GetTransaction = () => {
     return (
         <div>
             <h1>GET from Spring boot</h1>
-            <ul>
-                {data.map((item) => (
-                    <li key={item.id}> {item.id} - {item.textTitle} -  {item.exchangeDate} - {item.company.companyname}
-                        - {item.company.email} - {item.spent.textTitle}- {item.spent.location} - {item.amountEnter}</li>
-                ))}
-            </ul>
-        </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item) => (
+
+                        <tr key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.textTitle}</td>
+                            <td>{item.exchangeDate}</td>
+                            <td>{item.company.companyname}</td>
+                            {/* {item.id} {item.textTitle} -  {item.exchangeDate} - {item.company.companyname}
+                                    - {item.company.email} - {item.spent.textTitle}- {item.spent.location} - {item.amountEnter} */}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div >
     );
 }
 //PUT
