@@ -259,11 +259,9 @@ export const GetCalcualteBalance = () => {
     }, []);
     return (
         <div>
-            {balance !== null ? (
-                <h2>Balance: ${Number(balance).toFixed(2)}</h2>
-            ) : (
-                <h2>Loading balance...</h2>
-            )}
+
+            <h2>Balance: ${Number(balance).toFixed(2)}</h2>
+
         </div >
     );
 }
