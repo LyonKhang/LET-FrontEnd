@@ -2,18 +2,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import '../css/Transaction.css';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import dayjs from 'dayjs';
 
 console.log("this run");
 
 export const AddTransaction = () => {
     const [name, setName] = useState('');
     const [number, setInterval] = useState('');
-    const [date, setdate] = useState('');
+    const [date, setdate] = React.useState(dayjs('10-05-2024'));
+
     const [companyname, setCompanyName] = useState('');
     const [email, setEmail] = useState('');
     const [product, setProduct] = useState('');
     const [location, setLocation] = useState('');
     const handleSubmit = async (event) => {
+
         event.preventDefault();
         const formatted = moment(date).format('MM-DD-YYYY');
         try {
@@ -37,6 +46,43 @@ export const AddTransaction = () => {
     };
     return (
         <div>
+            <Box onSubmit={handleSubmit}
+                component="form"
+                sx={{
+                    '& .MuiTextField-root': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+            >
+                <TextField
+                    required
+                    id="outlined-required"
+                    label="Required"
+                    defaultValue="Hello World"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <TextField
+                    id="outlined-number"
+                    label="Number"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                    value={number}
+                    onChange={(e) => setInterval(e.target.value)}
+                />
+
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                        value={date}
+                        onChange={(e) => setdate(e)}
+                    />
+                </LocalizationProvider>
+
+                <button type="submit">Submit</button>
+            </Box>
+
             <h2>new</h2>
             <form onSubmit={handleSubmit}>
                 <input
@@ -111,14 +157,36 @@ export const GetTransaction = () => {
 
     return (
         <div>
-            <h1>GET from Spring boot</h1>
-            <ul>
-                {data.map((item) => (
-                    <li key={item.id}> {item.id} - {item.textTitle} -  {item.exchangeDate} - {item.company.companyname}
-                        - {item.company.email} - {item.spent.textTitle}- {item.spent.location} - {item.amountEnter}</li>
-                ))}
-            </ul>
-        </div>
+            <h1>Table</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Company</th>
+                        <th>Email</th>
+                        <th>Product</th>
+                        <th>location</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item) => (
+                        <tr key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.textTitle}</td>
+                            <td>{item.exchangeDate}</td>
+                            <td>{item.company.companyname}</td>
+                            <td>{item.company.email}</td>
+                            <td>{item.spent.textTitle}</td>
+                            <td>{item.spent.location}</td>
+                            <td><h3>${item.amountEnter}</h3></td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div >
     );
 }
 //PUT
@@ -259,11 +327,9 @@ export const GetCalcualteBalance = () => {
     }, []);
     return (
         <div>
-            {balance !== null ? (
-                <h2>Balance: ${Number(balance).toFixed(2)}</h2>
-            ) : (
-                <h2>Loading balance...</h2>
-            )}
+
+            <h2>Balance: ${Number(balance).toFixed(2)}</h2>
+
         </div >
     );
 }
