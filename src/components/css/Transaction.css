@@ -3,10 +3,15 @@ table {
   border-collapse: collapse;
   min-width: 100%;
   grid-template-columns:
-    minmax(150px, 1fr)
-    minmax(150px, 1.67fr)
-    minmax(150px, 1.67fr)
-    minmax(150px, 1.67fr);
+    minmax(38px, 0.2fr)
+    minmax(100px, 1.37fr)
+    minmax(100px, 1.37fr)
+    minmax(100px, 1.37fr)
+    minmax(100px, 1.4fr)
+    minmax(100px, 1.37fr)
+    minmax(100px, 1.3fr)
+    minmax(100px, 1.37fr);
+  font-size: 15px;
 }
 
 thead,
@@ -17,7 +22,7 @@ tr {
 
 th,
 td {
-  padding: 15px;
+  padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
