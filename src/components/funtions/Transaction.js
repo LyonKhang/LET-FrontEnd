@@ -90,7 +90,7 @@ export const AddTransaction = () => {
                             required
                             id="outlined-required"
                             label="Required"
-                            defaultValue="Hello World"
+                            defaultValue=""
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -105,13 +105,13 @@ export const AddTransaction = () => {
                             />
                         </FormControl>
                         <LocalizationProvider dateAdapter={AdapterDayjs} >
-                            <DemoContainer components={['DatePicker']}  >
+                            <DemoContainer components={['DatePicker']} fullWidth sx={{ m: 1 }} >
                                 <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
                             </DemoContainer>
                         </LocalizationProvider>
                         <Box sx={{ minWidth: 120 }}>
                             <FormControl sx={{ m: 1, width: '20ch', }} >
-                                <InputLabel id="demo-simple-select-label">category</InputLabel>
+                                <InputLabel id="demo-simple-select-label">Category</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
@@ -123,12 +123,13 @@ export const AddTransaction = () => {
                                     <MenuItem value={"bill"}>Bill</MenuItem>
                                     <MenuItem value={"entertainment"}>Entertainment</MenuItem>
                                     <MenuItem value={"insurance"}>Insurance</MenuItem>
+                                    <MenuItem value={"other"}>Other</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
                         <Box sx={{ minWidth: 120 }}>
                             <FormControl sx={{ m: 1, width: '20ch', }}>
-                                <InputLabel id="demo-simple-select-label">payment</InputLabel>
+                                <InputLabel id="demo-simple-select-label">Payment</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
@@ -136,13 +137,39 @@ export const AddTransaction = () => {
                                     label="Payment"
                                     onChange={(e) => setEmail(e.target.value)}
                                 >
-                                    <MenuItem value={"car"}>Car</MenuItem>
-                                    <MenuItem value={"bill"}>Bill</MenuItem>
-                                    <MenuItem value={"entertainment"}>Entertainment</MenuItem>
-                                    <MenuItem value={"Insurance"}>Entertainment</MenuItem>
+                                    <MenuItem value={""}></MenuItem>
+                                    <MenuItem value={"income"}>Income</MenuItem>
+                                    <MenuItem value={"expense"}>Expense</MenuItem>
+                                    <MenuItem value={"transfer"}>Transfer</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{ m: 1, width: '20ch', }}>
+                                <InputLabel id="demo-simple-select-label">Location</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={location}
+                                    label="Location"
+                                    onChange={(e) => setLocation(e.target.value)}
+                                >
+                                    <MenuItem value={""}></MenuItem>
+                                    <MenuItem value={"online"}>Online</MenuItem>
+                                    <MenuItem value={"in-person"}>In-person</MenuItem>
+                                    <MenuItem value={"subscription"}>Subscription</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <TextField fullWidth sx={{ m: 1, width: '20ch', }}
+                            required
+                            id="outlined-required"
+                            label="Required"
+                            defaultValue=""
+                            value={product}
+                            onChange={(e) => setProduct(e.target.value)}
+                        />
+
                         {/* button */}
                     </DialogContent>
                     <DialogActions >
@@ -152,42 +179,6 @@ export const AddTransaction = () => {
                 </Dialog>
             </React.Fragment>
 
-
-            <Box onSubmit={handleSubmit}
-                component="form"
-                sx={{
-                    '& .MuiTextField-root': { m: 1, width: '15ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                <TextField
-                    required
-                    id="outlined-required"
-                    label="Required"
-                    defaultValue="Hello World"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <FormControl fullWidth sx={{ m: 1, width: '20ch', }}>
-                    <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
-                    <OutlinedInput
-                        id="outlined-adornment-amount"
-                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
-                        label="Amount"
-                        value={number}
-                        onChange={(e) => setInterval(e.target.value)}
-                    />
-                </FormControl>
-                <LocalizationProvider dateAdapter={AdapterDayjs} >
-                    <DemoContainer components={['DatePicker']}  >
-                        <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
-                    </DemoContainer>
-                </LocalizationProvider>
-
-
-                <button type="submit">Submit</button>
-            </Box>
 
             <h2>new</h2>
             <form onSubmit={handleSubmit}>
