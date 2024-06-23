@@ -9,6 +9,10 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputAdornment from '@mui/material/InputAdornment';
 import dayjs from 'dayjs';
 
 
@@ -18,7 +22,6 @@ export const AddTransaction = () => {
     const [name, setName] = useState('');
     const [number, setInterval] = useState('');
     const [date, setdate] = React.useState(dayjs('07-02-2024'));
-
     const [companyname, setCompanyName] = useState('');
     const [email, setEmail] = useState('');
     const [product, setProduct] = useState('');
@@ -66,21 +69,23 @@ export const AddTransaction = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <TextField
-                    id="outlined-number"
-                    label="Number"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    value={number}
-                    onChange={(e) => setInterval(e.target.value)}
-                />
+                <FormControl fullWidth sx={{ m: 0.5 }}>
+                    <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                    <OutlinedInput
+                        id="outlined-adornment-amount"
+                        startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                        label="Amount"
+                        value={number}
+                        onChange={(e) => setInterval(e.target.value)}
+                    />
+                </FormControl>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={['DatePicker']}>
                         <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
                     </DemoContainer>
                 </LocalizationProvider>
+
+
                 <button type="submit">Submit</button>
             </Box>
 
