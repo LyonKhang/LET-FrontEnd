@@ -90,7 +90,7 @@ export const AddTransaction = () => {
                             required
                             id="outlined-required"
                             label="Required"
-                            defaultValue=""
+                            defaultValue="empty"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -161,15 +161,15 @@ export const AddTransaction = () => {
                                 </Select>
                             </FormControl>
                         </Box>
-                        <TextField fullWidth sx={{ m: 1, width: '20ch', }}
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue=""
+                        <TextField fullWidth sx={{ m: 1, width: '20ch' }}
+                            id="outlined-multiline-static"
+                            label="Note"
+                            multiline
+                            rows={4}
+                            defaultValue="Default Value"
                             value={product}
                             onChange={(e) => setProduct(e.target.value)}
                         />
-
                         {/* button */}
                     </DialogContent>
                     <DialogActions >
