@@ -14,6 +14,12 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import dayjs from 'dayjs';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Button from '@mui/material/Button';
 
 
 console.log("this run");
@@ -26,9 +32,18 @@ export const AddTransaction = () => {
     const [email, setEmail] = useState('');
     const [product, setProduct] = useState('');
     const [location, setLocation] = useState('');
+    // button
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     const handleSubmit = async (event) => {
 
-        event.preventDefault();
         console.log(date);
         const formatted = date.format('MM-DD-YYYY');
         console.log(formatted);
@@ -53,10 +68,61 @@ export const AddTransaction = () => {
     };
     return (
         <div>
+            <React.Fragment>
+                <Button variant="outlined" onClick={handleClickOpen}>
+                    Open form dialog
+                </Button>
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                        component: 'form',
+                        onSubmit: (event) => {
+                            event.preventDefault();
+                            handleSubmit(event);
+                            handleClose();
+                        },
+                    }}
+                >
+                    <DialogTitle>Add</DialogTitle>
+                    <DialogContent>
+                        <TextField
+                            required
+                            id="outlined-required"
+                            label="Required"
+                            defaultValue="Hello World"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <FormControl fullWidth sx={{ m: 1, width: '20ch', }}>
+                            <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                            <OutlinedInput
+                                id="outlined-adornment-amount"
+                                startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                                label="Amount"
+                                value={number}
+                                onChange={(e) => setInterval(e.target.value)}
+                            />
+                        </FormControl>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} >
+                            <DemoContainer components={['DatePicker']}  >
+                                <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
+                            </DemoContainer>
+                        </LocalizationProvider>
+
+                    </DialogContent>
+                    <DialogActions >
+                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button type="submit">Submi</Button>
+                    </DialogActions>
+                </Dialog>
+            </React.Fragment>
+
+
             <Box onSubmit={handleSubmit}
                 component="form"
                 sx={{
-                    '& .MuiTextField-root': { m: 1, width: '25ch' },
+                    '& .MuiTextField-root': { m: 1, width: '15ch' },
                 }}
                 noValidate
                 autoComplete="off"
@@ -69,7 +135,7 @@ export const AddTransaction = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <FormControl fullWidth sx={{ m: 1, maxWidth: '20%', }}>
+                <FormControl fullWidth sx={{ m: 1, width: '20ch', }}>
                     <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-amount"
@@ -79,8 +145,8 @@ export const AddTransaction = () => {
                         onChange={(e) => setInterval(e.target.value)}
                     />
                 </FormControl>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DemoContainer components={['DatePicker']}>
+                <LocalizationProvider dateAdapter={AdapterDayjs} >
+                    <DemoContainer components={['DatePicker']}  >
                         <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
                     </DemoContainer>
                 </LocalizationProvider>
