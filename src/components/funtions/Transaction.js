@@ -17,10 +17,10 @@ import dayjs from 'dayjs';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
-
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 console.log("this run");
 
@@ -86,7 +86,7 @@ export const AddTransaction = () => {
                 >
                     <DialogTitle>Add</DialogTitle>
                     <DialogContent>
-                        <TextField
+                        <TextField fullWidth sx={{ m: 1, width: '20ch', }}
                             required
                             id="outlined-required"
                             label="Required"
@@ -109,11 +109,45 @@ export const AddTransaction = () => {
                                 <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
                             </DemoContainer>
                         </LocalizationProvider>
-
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{ m: 1, width: '20ch', }} >
+                                <InputLabel id="demo-simple-select-label">category</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={companyname}
+                                    label="catergory"
+                                    onChange={(e) => setCompanyName(e.target.value)}
+                                >
+                                    <MenuItem value={"car"}>Car</MenuItem>
+                                    <MenuItem value={"bill"}>Bill</MenuItem>
+                                    <MenuItem value={"entertainment"}>Entertainment</MenuItem>
+                                    <MenuItem value={"insurance"}>Insurance</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{ m: 1, width: '20ch', }}>
+                                <InputLabel id="demo-simple-select-label">payment</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={email}
+                                    label="Payment"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                >
+                                    <MenuItem value={"car"}>Car</MenuItem>
+                                    <MenuItem value={"bill"}>Bill</MenuItem>
+                                    <MenuItem value={"entertainment"}>Entertainment</MenuItem>
+                                    <MenuItem value={"Insurance"}>Entertainment</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        {/* button */}
                     </DialogContent>
                     <DialogActions >
                         <Button onClick={handleClose}>Cancel</Button>
-                        <Button type="submit">Submi</Button>
+                        <Button type="submit">Submit</Button>
                     </DialogActions>
                 </Dialog>
             </React.Fragment>
@@ -236,8 +270,8 @@ export const GetTransaction = () => {
                         <th>ID</th>
                         <th>Title</th>
                         <th>Date</th>
-                        <th>Company</th>
-                        <th>Email</th>
+                        <th>Catergory</th>
+                        <th>Payment</th>
                         <th>Product</th>
                         <th>location</th>
                         <th>Amount</th>

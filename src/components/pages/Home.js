@@ -6,8 +6,8 @@ export const Home = () => {
     return (
         <div>
             <GetCalcualteBalance />
-            <GetTransaction />
             <AddTransaction />
+            <GetTransaction />
             <EditTransaction />
             <DeleteTransaction />
         </div>
