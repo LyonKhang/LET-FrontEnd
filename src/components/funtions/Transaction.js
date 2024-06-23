@@ -69,7 +69,7 @@ export const AddTransaction = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <FormControl fullWidth sx={{ m: 0.5 }}>
+                <FormControl fullWidth sx={{ m: 1, maxWidth: '20%', }}>
                     <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-amount"
