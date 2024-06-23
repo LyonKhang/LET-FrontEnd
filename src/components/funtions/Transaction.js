@@ -5,17 +5,19 @@ import moment from 'moment';
 import '../css/Transaction.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
+
 
 console.log("this run");
 
 export const AddTransaction = () => {
     const [name, setName] = useState('');
     const [number, setInterval] = useState('');
-    const [date, setdate] = React.useState(dayjs('10-05-2024'));
+    const [date, setdate] = React.useState(dayjs('07-02-2024'));
 
     const [companyname, setCompanyName] = useState('');
     const [email, setEmail] = useState('');
@@ -24,7 +26,9 @@ export const AddTransaction = () => {
     const handleSubmit = async (event) => {
 
         event.preventDefault();
-        const formatted = moment(date).format('MM-DD-YYYY');
+        console.log(date);
+        const formatted = date.format('MM-DD-YYYY');
+        console.log(formatted);
         try {
             const response = await axios.post('http://localhost:8080/transactions/newtransactions', {
                 textTitle: name,
@@ -72,14 +76,11 @@ export const AddTransaction = () => {
                     value={number}
                     onChange={(e) => setInterval(e.target.value)}
                 />
-
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker
-                        value={date}
-                        onChange={(e) => setdate(e)}
-                    />
+                    <DemoContainer components={['DatePicker']}>
+                        <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
+                    </DemoContainer>
                 </LocalizationProvider>
-
                 <button type="submit">Submit</button>
             </Box>
 
