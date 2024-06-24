@@ -26,12 +26,12 @@ function NavBar() {
 
                         <li className="nav-item">
                             <NavLink
-                                to="/show"
+                                to="/about"
                                 activeclassname="active"
                                 className="nav_button"
                                 onClick={handleClick}
                             >
-                                Show
+                                About
                             </NavLink>
                         </li>
                     </ul>
