@@ -252,7 +252,6 @@ export const EditTransaction = () => {
         setOpen(false);
     };
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formatted = date.format('MM-DD-YYYY');
@@ -406,6 +405,16 @@ export const EditTransaction = () => {
 //DELETE
 export const DeleteTransaction = () => {
     const [labelid, setlabelid] = useState('');
+
+    // button close on and off
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -417,17 +426,45 @@ export const DeleteTransaction = () => {
     };
     return (
         <div>
-            <h2>Delete</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="id"
-                    placeholder="id"
-                    value={labelid}
-                    onChange={(e) => setlabelid(e.target.value)}
-                />
-                <button type="submit">Delete</button>
-            </form>
-        </div>
+            <React.Fragment>
+                {/* Button to open */}
+                <Button variant="outlined" onClick={handleClickOpen}>
+                    Open form dialog
+                </Button>
+
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                        component: 'form',
+                        onSubmit: (event) => {
+                            event.preventDefault();
+                            handleSubmit(event);
+                            handleClose();
+                        },
+                    }}
+                >
+                    <DialogTitle>Add</DialogTitle>
+                    <DialogContent>
+                        <TextField sx={{ m: 1, width: '20ch', }}
+                            id="outlined-number"
+                            label="Number"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            value={labelid}
+                            onChange={(e) => setlabelid(e.target.value)}
+                        />
+                        {/* button */}
+                    </DialogContent>
+                    <DialogActions >
+                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button type="submit">Submit</Button>
+                    </DialogActions>
+                </Dialog>
+            </React.Fragment>
+        </div >
     );
 };
 //Calcualte Balance
