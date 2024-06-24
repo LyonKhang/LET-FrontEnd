@@ -1,4 +1,4 @@
-
+/*This is a Tranasction funtion: Author Vinh */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
@@ -32,22 +32,22 @@ export const AddTransaction = () => {
     const [email, setEmail] = useState('');
     const [product, setProduct] = useState('');
     const [location, setLocation] = useState('');
-    // button
+    // button close on and off
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
         setOpen(true);
     };
-
     const handleClose = () => {
         setOpen(false);
     };
-
+    // sent POSt reuest to Back end at localhost:8080
     const handleSubmit = async (event) => {
-
         console.log(date);
+        //format the date into US date
         const formatted = date.format('MM-DD-YYYY');
         console.log(formatted);
         try {
+            //sent reuest in JSON
             const response = await axios.post('http://localhost:8080/transactions/newtransactions', {
                 textTitle: name,
                 amountEnter: number,
@@ -67,11 +67,14 @@ export const AddTransaction = () => {
         }
     };
     return (
+        // Pop up 
         <div>
             <React.Fragment>
+                {/* Button to open */}
                 <Button variant="outlined" onClick={handleClickOpen}>
                     Open form dialog
                 </Button>
+
                 <Dialog
                     open={open}
                     onClose={handleClose}
@@ -86,7 +89,7 @@ export const AddTransaction = () => {
                 >
                     <DialogTitle>Add</DialogTitle>
                     <DialogContent>
-                        <TextField fullWidth sx={{ m: 1, width: '20ch', }}
+                        <TextField sx={{ m: 1, width: '20ch', }}
                             required
                             id="outlined-required"
                             label="Required"
@@ -178,63 +181,6 @@ export const AddTransaction = () => {
                     </DialogActions>
                 </Dialog>
             </React.Fragment>
-
-
-            <h2>new</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                    type="number"
-                    placeholder="Number"
-                    value={number}
-                    onChange={(e) => setInterval(e.target.value)}
-                />
-                <input
-                    type="date"
-                    placeholder="Date"
-                    value={date}
-                    onChange={(e) => setdate(e.target.value)}
-                />
-
-                <input
-                    type="text"
-                    placeholder="Company Name"
-                    value={companyname}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Product"
-                    value={product}
-                    onChange={(e) => setProduct(e.target.value)}
-                />
-                <select
-                    id="location"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                >
-                    <option value="none">None</option>
-                    <option value="online">Online</option>
-                    <option value="inperson">In-Person</option>
-                    <option value="subscription">Subscription</option>
-                    <option value="other">Other</option>
-                </select>
-                {location && (
-                    <p>You selected: {location}</p>
-                )}
-                <button type="submit">Submit</button>
-            </form>
         </div>
     );
 };
@@ -291,14 +237,25 @@ export const EditTransaction = () => {
     const [id, setid] = useState('');
     const [name, setName] = useState('');
     const [number, setInterval] = useState('');
-    const [date, setdate] = useState('');
+    const [date, setdate] = React.useState(dayjs('07-02-2024'));
     const [companyname, setCompanyName] = useState('');
     const [email, setEmail] = useState('');
     const [product, setProduct] = useState('');
     const [location, setLocation] = useState('');
+
+    // button close on and off
+    const [open, setOpen] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const formatted = moment(date).format('MM-DD-YYYY');
+        const formatted = date.format('MM-DD-YYYY');
         try {
             const response = await axios.put('http://localhost:8080/transactions/edittransaction', {
                 id: id,
@@ -321,65 +278,129 @@ export const EditTransaction = () => {
     };
     return (
         <div>
-            <h2>Edit</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="id"
-                    placeholder="id"
-                    value={id}
-                    onChange={(e) => setid(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <input
-                    type="number"
-                    placeholder="Number"
-                    value={number}
-                    onChange={(e) => setInterval(e.target.value)}
-                />
-                <input
-                    type="date"
-                    placeholder="Date"
-                    value={date}
-                    onChange={(e) => setdate(e.target.value)}
-                />
+            <React.Fragment>
+                {/* Button to open */}
+                <Button variant="outlined" onClick={handleClickOpen}>
+                    Open form dialog
+                </Button>
 
-                <input
-                    type="text"
-                    placeholder="Company Name"
-                    value={companyname}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="text"
-                    placeholder="Product"
-                    value={product}
-                    onChange={(e) => setProduct(e.target.value)}
-                />
-                <select
-                    id="location"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                        component: 'form',
+                        onSubmit: (event) => {
+                            event.preventDefault();
+                            handleSubmit(event);
+                            handleClose();
+                        },
+                    }}
                 >
-                    <option value="none">None</option>
-                    <option value="online">Online</option>
-                    <option value="inperson">In-Person</option>
-                    <option value="subscription">Subscription</option>
-                    <option value="other">Other</option>
-                </select>
-                <button type="submit">Update</button>
-            </form>
-        </div>
+                    <DialogTitle>Add</DialogTitle>
+                    <DialogContent>
+                        <TextField sx={{ m: 1, width: '20ch', }}
+                            id="outlined-number"
+                            label="Number"
+                            type="number"
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            value={id}
+                            onChange={(e) => setid(e.target.value)}
+                        />
+                        <TextField fullWidth sx={{ m: 1, width: '20ch', }}
+                            required
+                            id="outlined-required"
+                            label="Required"
+                            defaultValue="empty"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                        />
+                        <FormControl fullWidth sx={{ m: 1, width: '20ch', }}>
+                            <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+                            <OutlinedInput
+                                id="outlined-adornment-amount"
+                                startAdornment={<InputAdornment position="start">$</InputAdornment>}
+                                label="Amount"
+                                value={number}
+                                onChange={(e) => setInterval(e.target.value)}
+                            />
+                        </FormControl>
+                        <LocalizationProvider dateAdapter={AdapterDayjs} >
+                            <DemoContainer components={['DatePicker']} fullWidth sx={{ m: 1 }} >
+                                <DatePicker value={date} onChange={(newValue) => setdate(newValue)} />
+                            </DemoContainer>
+                        </LocalizationProvider>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{ m: 1, width: '20ch', }} >
+                                <InputLabel id="demo-simple-select-label">Category</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={companyname}
+                                    label="catergory"
+                                    onChange={(e) => setCompanyName(e.target.value)}
+                                >
+                                    <MenuItem value={"car"}>Car</MenuItem>
+                                    <MenuItem value={"bill"}>Bill</MenuItem>
+                                    <MenuItem value={"entertainment"}>Entertainment</MenuItem>
+                                    <MenuItem value={"insurance"}>Insurance</MenuItem>
+                                    <MenuItem value={"other"}>Other</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{ m: 1, width: '20ch', }}>
+                                <InputLabel id="demo-simple-select-label">Payment</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={email}
+                                    label="Payment"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                >
+                                    <MenuItem value={""}></MenuItem>
+                                    <MenuItem value={"income"}>Income</MenuItem>
+                                    <MenuItem value={"expense"}>Expense</MenuItem>
+                                    <MenuItem value={"transfer"}>Transfer</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <Box sx={{ minWidth: 120 }}>
+                            <FormControl sx={{ m: 1, width: '20ch', }}>
+                                <InputLabel id="demo-simple-select-label">Location</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={location}
+                                    label="Location"
+                                    onChange={(e) => setLocation(e.target.value)}
+                                >
+                                    <MenuItem value={""}></MenuItem>
+                                    <MenuItem value={"online"}>Online</MenuItem>
+                                    <MenuItem value={"in-person"}>In-person</MenuItem>
+                                    <MenuItem value={"subscription"}>Subscription</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
+                        <TextField fullWidth sx={{ m: 1, width: '20ch' }}
+                            id="outlined-multiline-static"
+                            label="Note"
+                            multiline
+                            rows={4}
+                            defaultValue="Empty"
+                            value={product}
+                            onChange={(e) => setProduct(e.target.value)}
+                        />
+                        {/* button */}
+                    </DialogContent>
+                    <DialogActions >
+                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button type="submit">Submit</Button>
+                    </DialogActions>
+                </Dialog>
+            </React.Fragment>
+        </div >
     );
 };
 //DELETE

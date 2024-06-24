@@ -7,9 +7,10 @@ export const Home = () => {
         <div>
             <GetCalcualteBalance />
             <AddTransaction />
-            <GetTransaction />
             <EditTransaction />
             <DeleteTransaction />
+            <GetTransaction />
+
         </div>
     );
 };
