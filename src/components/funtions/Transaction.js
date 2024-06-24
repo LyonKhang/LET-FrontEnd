@@ -71,8 +71,8 @@ export const AddTransaction = () => {
         <div>
             <React.Fragment>
                 {/* Button to open */}
-                <Button variant="outlined" onClick={handleClickOpen}>
-                    Open form dialog
+                <Button variant="outlined" onClick={handleClickOpen} sx={{ m: 1, width: '20ch', }}>
+                    New
                 </Button>
 
                 <Dialog
@@ -279,8 +279,8 @@ export const EditTransaction = () => {
         <div>
             <React.Fragment>
                 {/* Button to open */}
-                <Button variant="outlined" onClick={handleClickOpen}>
-                    Open form dialog
+                <Button variant="outlined" onClick={handleClickOpen} sx={{ m: 1, width: '20ch', }} >
+                    Edit
                 </Button>
 
                 <Dialog
@@ -428,8 +428,8 @@ export const DeleteTransaction = () => {
         <div>
             <React.Fragment>
                 {/* Button to open */}
-                <Button variant="outlined" onClick={handleClickOpen}>
-                    Open form dialog
+                <Button variant="outlined" onClick={handleClickOpen} sx={{ m: 1, width: '20ch', }}>
+                    Delete
                 </Button>
 
                 <Dialog
@@ -444,7 +444,7 @@ export const DeleteTransaction = () => {
                         },
                     }}
                 >
-                    <DialogTitle>Add</DialogTitle>
+                    <DialogTitle>Delete</DialogTitle>
                     <DialogContent>
                         <TextField sx={{ m: 1, width: '20ch', }}
                             id="outlined-number"
@@ -468,7 +468,6 @@ export const DeleteTransaction = () => {
     );
 };
 //Calcualte Balance
-
 export const GetCalcualteBalance = () => {
     const [balance, setBalance] = useState([]);
     // run every 5 seconds
@@ -482,7 +481,6 @@ export const GetCalcualteBalance = () => {
     }, []);
     return (
         <div>
-
             <h2>Balance: ${Number(balance).toFixed(2)}</h2>
 
         </div >

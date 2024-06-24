@@ -4,16 +4,15 @@ table {
   min-width: 100%;
   grid-template-columns:
     minmax(38px, 0.2fr)
-    minmax(100px, 1.37fr)
-    minmax(100px, 1.37fr)
-    minmax(100px, 1.37fr)
-    minmax(100px, 1.4fr)
-    minmax(100px, 1.37fr)
-    minmax(100px, 1.3fr)
-    minmax(100px, 1.37fr);
-  font-size: 15px;
+    minmax(180px, 1.37fr)
+    minmax(100px, 1.2fr)
+    minmax(100px, 1.5fr)
+    minmax(100px, 1.2fr)
+    minmax(100px, 1.2fr)
+    minmax(100px, 1.2fr)
+    minmax(100px, 1.3fr);
+  font-size: 14.5px;
 }
-
 thead,
 tbody,
 tr {
@@ -31,7 +30,7 @@ td {
 th {
   position: sticky;
   top: 0;
-  background: #6c7ae0;
+  background: rgb(243, 148, 91);
   text-align: left;
   font-weight: normal;
   font-size: 1.1rem;
@@ -43,11 +42,11 @@ th:last-child {
 }
 
 td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #808080;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #636363;
 }
 
 tr:nth-child(even) td {
-  background: #f8f6ff;
+  background: rgb(226, 222, 255);
 }
