@@ -1,7 +1,6 @@
 /*This is a Tranasction funtion: Author Vinh */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import moment from 'moment';
 import '../css/Transaction.css';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -29,9 +28,9 @@ export const AddTransaction = () => {
     const [number, setInterval] = useState('');
     const [date, setdate] = React.useState(dayjs('07-02-2024'));
     const [selection, setSelection] = useState('');
-    const [email, setEmail] = useState('');
-    const [product, setProduct] = useState('');
+    const [payment, setPayment] = useState('');
     const [location, setLocation] = useState('');
+    const [product, setProduct] = useState('');
     // button close on and off
     const [open, setOpen] = React.useState(false);
     const handleClickOpen = () => {
@@ -53,8 +52,8 @@ export const AddTransaction = () => {
                 amountEnter: number,
                 exchangeDate: formatted,
                 selection: {
-                    catergory: selection,
-                    payment: email,
+                    category: selection,
+                    payment: payment,
                 },
                 spent: {
                     textTitle: product,
@@ -119,7 +118,7 @@ export const AddTransaction = () => {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={selection}
-                                    label="catergory"
+                                    label="category"
                                     onChange={(e) => setSelection(e.target.value)}
                                 >
                                     <MenuItem value={"car"}>Car</MenuItem>
@@ -136,9 +135,9 @@ export const AddTransaction = () => {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={email}
+                                    value={payment}
                                     label="Payment"
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => setPayment(e.target.value)}
                                 >
                                     <MenuItem value={""}></MenuItem>
                                     <MenuItem value={"income"}>Income</MenuItem>
@@ -207,10 +206,10 @@ export const GetTransaction = () => {
                         <th>ID</th>
                         <th>Title</th>
                         <th>Date</th>
-                        <th>Catergory</th>
+                        <th>category</th>
                         <th>Payment</th>
-                        <th>Product</th>
                         <th>location</th>
+                        <th>Product</th>
                         <th>Amount</th>
                     </tr>
                 </thead>
@@ -220,10 +219,10 @@ export const GetTransaction = () => {
                             <td>{item.id}</td>
                             <td>{item.textTitle}</td>
                             <td>{item.exchangeDate}</td>
-                            <td>{item.selection.catergory}</td>
+                            <td>{item.selection.category}</td>
                             <td>{item.selection.payment}</td>
-                            <td>{item.spent.textTitle}</td>
                             <td>{item.spent.location}</td>
+                            <td>{item.spent.textTitle}</td>
                             <td><h3>${item.amountEnter}</h3></td>
                         </tr>
                     ))}
@@ -239,7 +238,7 @@ export const EditTransaction = () => {
     const [number, setInterval] = useState('');
     const [date, setdate] = React.useState(dayjs('07-02-2024'));
     const [selection, setSelection] = useState('');
-    const [email, setEmail] = useState('');
+    const [payment, setPayment] = useState('');
     const [product, setProduct] = useState('');
     const [location, setLocation] = useState('');
 
@@ -263,7 +262,7 @@ export const EditTransaction = () => {
                 exchangeDate: formatted,
                 selection: {
                     selection: selection,
-                    email: email,
+                    payment: payment,
                 },
                 spent: {
                     textTitle: product,
@@ -337,7 +336,7 @@ export const EditTransaction = () => {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={selection}
-                                    label="catergory"
+                                    label="category"
                                     onChange={(e) => setSelection(e.target.value)}
                                 >
                                     <MenuItem value={"car"}>Car</MenuItem>
@@ -354,9 +353,9 @@ export const EditTransaction = () => {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={email}
+                                    value={payment}
                                     label="Payment"
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(e) => setPayment(e.target.value)}
                                 >
                                     <MenuItem value={""}></MenuItem>
                                     <MenuItem value={"income"}>Income</MenuItem>
