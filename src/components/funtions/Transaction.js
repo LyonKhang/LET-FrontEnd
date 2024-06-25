@@ -26,7 +26,7 @@ console.log("this run");
 export const AddTransaction = () => {
     const [name, setName] = useState('');
     const [number, setInterval] = useState('');
-    const [date, setdate] = React.useState(dayjs('07-02-2024'));
+    const [date, setdate] = React.useState(dayjs());
     const [selection, setSelection] = useState('');
     const [payment, setPayment] = useState('');
     const [location, setLocation] = useState('');
@@ -92,7 +92,6 @@ export const AddTransaction = () => {
                             required
                             id="outlined-required"
                             label="Required"
-                            defaultValue="empty"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -168,7 +167,6 @@ export const AddTransaction = () => {
                             label="Note"
                             multiline
                             rows={4}
-                            defaultValue="Default Value"
                             value={product}
                             onChange={(e) => setProduct(e.target.value)}
                         />
@@ -236,7 +234,7 @@ export const EditTransaction = () => {
     const [id, setid] = useState('');
     const [name, setName] = useState('');
     const [number, setInterval] = useState('');
-    const [date, setdate] = React.useState(dayjs('07-02-2024'));
+    const [date, setdate] = React.useState(dayjs());
     const [selection, setSelection] = useState('');
     const [payment, setPayment] = useState('');
     const [product, setProduct] = useState('');
@@ -310,7 +308,6 @@ export const EditTransaction = () => {
                             required
                             id="outlined-required"
                             label="Required"
-                            defaultValue="empty"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -386,7 +383,6 @@ export const EditTransaction = () => {
                             label="Note"
                             multiline
                             rows={4}
-                            defaultValue="Empty"
                             value={product}
                             onChange={(e) => setProduct(e.target.value)}
                         />
@@ -479,7 +475,7 @@ export const GetCalcualteBalance = () => {
         return () => clearInterval(interval);
     }, []);
     return (
-        <div>
+        <div className="module">
             <h2>Balance: ${Number(balance).toFixed(2)}</h2>
 
         </div >

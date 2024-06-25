@@ -30,7 +30,7 @@ td {
 th {
   position: sticky;
   top: 0;
-  background: rgb(243, 148, 91);
+  background: #f3945b;
   text-align: left;
   font-weight: normal;
   font-size: 1.1rem;
@@ -49,4 +49,37 @@ td {
 
 tr:nth-child(even) td {
   background: rgb(226, 222, 255);
+}
+tr:nth-child(odd) td {
+  background: white;
+}
+/* balance */
+h2 {
+  color: white;
+  margin: 1rem 1rem 1rem 1rem;
+  text-align: center;
+}
+h1 {
+  color: #fc4100;
+  margin: 0.25rem 0.5rem 0.5rem 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 200px;
+  cursor: pointer;
+  text-align: center;
+}
+.module {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 884px;
+  border-radius: 20px;
+  padding: rem;
+  display: flex;
+  align-self: center;
+  background: #2c4e80;
+}
+.container {
+  display: grid;
 }
