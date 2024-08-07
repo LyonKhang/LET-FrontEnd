@@ -2,26 +2,15 @@
  
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#technologies-used">Technologies use</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#requirement">Requirement</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#architecture">Architecture</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+ 
+  * [_About The Project_](#about-the-project)
+  * [_Technologies Used_](#technologies-used)
+  * [_Extension on Visual Studio Code_](#extension-on-visual-studio-code)
+  * [_Requirements_](#requirements)
+  * [_Installation_](#installation)
+  * [_Contributing_](#contributing)
+  * [_License_](#license)
+  * [_Acknowledgements_](#acknowledgements)
 </details>
 
 ## About The Project
@@ -29,11 +18,25 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### Technologies Used
+Backend:
++ Java 17 LTS  <br/>
++ Spring Boot 3 <br/>
++ Project Lombok <br/>
++ Maven <br/>
+Frontend:
++ Javascript
++ Visual Studio Code
++ Postman
++ MySQL WorkBench
++ 
 
+## _Extension on Visual Studio Code_
+
+## _Installation_
  To run this application
  1. navigate to the project folder 
- 2. Open command prompt and type: npm start
+ 2. Open the command prompt and type: npm start
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
