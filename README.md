@@ -1,15 +1,18 @@
-# LET-FrontEnd
+# Little Expense tracker
 ## About The Project
+A whole stack Project that allows tracking user expense activities. Users enter spending activities information into the sites and information. A simple user Site that provides vital information in spreadsheet forms. No need for complex Excel spreadsheets or countless physical papers. This service offers simple user inputs with ReactJS while tracking all information to Java back-ends with Spring Boots and storing it in the MySQL database.
 
-Little Expense tracker
-
-Link to back ends: 
+This project used backends 
+This is a front-end GitHub repo.<br>
+Link to back ends: https://github.com/LyonKhang/LETBackend.git
+### Table of Contents
 <!-- TABLE OF CONTENTS -->
   * [_About The Project_](#about-the-project)
   * [_Technologies Used_](#technologies-used)
   * [_Extension on Visual Studio Code_](#extension-on-visual-studio-code)
   * [_Prerequisites_](#prerequisites)
   * [_Installation and Run_](#installation-and-run)
+  * [_Architecture_](#architecture)
   * [_Contributing_](#contributing)
   * [_License_](#license)
   * [_Acknowledgements_](#acknowledgements)
@@ -28,47 +31,71 @@ Link to back ends:
 
 ## Extension on Visual Studio Code
 ### Backend:
-* **Spring Boot Extension Pack v0.2.1**
-* **Extension Pack for Javav0.28.0**
+* **Spring Boot Extension Pack v0.2.1**: a stand-alone platform that makes Java productions more streamlined. this extension Provides Java IDE Spring boot to VS Code.
+![link](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
+* **Extension Pack for Java v0.28.0**: Collections of Java extension for VS Code
+![link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 ### Frontend:
-* **JavaScript (ES6) code snippets v1.8.0**
-* **JavaScript and TypeScript Nightly v5.6.20240807**
-* **HTML CSS Support v2.0.10**
-* **Postman v1.2.1**
+* **JavaScript (ES6) code snippets v1.8.0**: provides Javascripts ES6 syntax for VS Code
+ ![link](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+* **JavaScript and TypeScript Nightly v5.6.20240807**: provides for both TypeScript and JavaScript Nightly build and also IntelliSense.
+![link](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
+* **HTML CSS Support v2.0.10**: provide HTML and CSS Intellisense for VS Code.
+![link](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+* **Postman v1.2.1**: testing APIs directly in VS Code.
+![link](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode)
 ## Prerequisites
 ### Backend:
-* **Java 17 LTS**
-* **Apache Maven 3.9.5**
-* **Eclipse Temurin Adoptium**
+* **Java 17 LTS**: Java JDK for development environmenrt.
+![link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* **Apache Maven 3.9.5**:a build automation tool used primarily for Java projects.
+![link](https://maven.apache.org/download.cgi)
+* **Eclipse Temurin Adoptium**:a Prebuilt java OpenJDK Binaries envrioemnt. This need to be installed in order to work with Spring boot.
+![link](https://adoptium.net/temurin/releases/?arch=any&os=windows)
 ### Frontend: None
 ### Development
-* **Visual Studio Code**:Newest version
-  
+* **Visual Studio Code**:Prefer newest version
+* **Postman**: API for offers design,build,test, projects.
+![link](https://www.postman.com/downloads/)
+* **My SQL Workbench**: visual database design tool.
+![link](https://www.mysql.com/products/workbench/)
 ## Installation and Run
 **Installation**:
-1. Clone repository:
-Backend:
-Frontend:
-2. Import the project to Visual Studio Code
+Clone repository:
+Backend: https://github.com/LyonKhang/LETBackend.git
+<br>
+Frontend: https://github.com/LyonKhang/LET-FrontEnd.git
+<br>
+Import the project to Visual Studio Code.
+
 ### Backend:
 **Setup**:
 1. Go to src/main/resources/application.properties
 2. Change your URL, username, and password so it works with your MySQL workbench.
+
 **Run**
+
 1. On VScode, navigate to Spring Boot Dashboard at the activity bar.
 2. On Spring Boot Dashboard, click run at the apps.
+
 ### Frontend:
- **Run**:
+
+ **Run** 
+ 
  1. navigate to the project folder 
  2. Open the command prompt and type: npm start
-    <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+    <p align="right">(<a href="#about-the-project">back to top</a>)</p>
+    
+## Architecture
+
 ## Contributing
 
 ## License
-This Project uses GPL-3.0 license (2024)
+This Project uses a GPL-3.0 license (2024)
 ## Acknowledgements
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
