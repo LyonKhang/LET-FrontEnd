@@ -1,7 +1,9 @@
 # LET-FrontEnd
 ## About The Project
-*   
 
+Little Expense tracker
+
+Link to back ends: 
 <!-- TABLE OF CONTENTS -->
   * [_About The Project_](#about-the-project)
   * [_Technologies Used_](#technologies-used)
@@ -12,7 +14,6 @@
   * [_License_](#license)
   * [_Acknowledgements_](#acknowledgements)
 
-
 ## Technologies Used
 ### Backend: [![Spring][Spring-boot]][Spring-boot-url]
 [![Java][Java]][Java-url]  [![Apache-Maven-Badge]][Apache-Maven-Badge-url]
@@ -21,7 +22,7 @@
 [![JavaScript][JavaScript]][JavaScript-url]
 ![HTML5-Badge]
 ![CSS3 Badge]
-### Other:  ![VSCode]
+### Development:  ![VSCode]
 [![Postman Badge]][Postman Badge-url]
 ![MySQL Badge]
 
@@ -29,7 +30,6 @@
 ### Backend:
 * **Spring Boot Extension Pack v0.2.1**
 * **Extension Pack for Javav0.28.0**
-* 
 ### Frontend:
 * **JavaScript (ES6) code snippets v1.8.0**
 * **JavaScript and TypeScript Nightly v5.6.20240807**
@@ -45,19 +45,22 @@
 * **Visual Studio Code**:Newest version
   
 ## Installation and Run
-
+**Installation**:
+1. Clone repository:
+Backend:
+Frontend:
+2. Import the project to Visual Studio Code
 ### Backend:
-**Setup**: 
+**Setup**:
 1. Go to src/main/resources/application.properties
 2. Change your URL, username, and password so it works with your MySQL workbench.
 **Run**
-1. On VScode, navigate to
-2. 
+1. On VScode, navigate to Spring Boot Dashboard at the activity bar.
+2. On Spring Boot Dashboard, click run at the apps.
 ### Frontend:
- To run this application
+ **Run**:
  1. navigate to the project folder 
  2. Open the command prompt and type: npm start
- 3. 
     <p align="right">(<a href="#readme-top">back to top</a>)</p>
 ## Contributing
 
@@ -66,6 +69,8 @@ This Project uses GPL-3.0 license (2024)
 ## Acknowledgements
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [Java]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
