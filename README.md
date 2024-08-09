@@ -19,10 +19,10 @@ Link to back ends: https://github.com/LyonKhang/LETBackend.git
   * [_Acknowledgements_](#acknowledgements)
 
 ## Technologies Used
-### Backend: [![Spring][Spring-boot]][Spring-boot-url]
+### Server: [![Spring][Spring-boot]][Spring-boot-url]
 [![Java][Java]][Java-url]  [![Apache-Maven-Badge]][Apache-Maven-Badge-url]
 
-### Frontend: [![React][React.js]][React-url]
+### Client: [![React][React.js]][React-url]
 [![JavaScript][JavaScript]][JavaScript-url]
 ![HTML5-Badge]
 ![CSS3 Badge]
@@ -31,12 +31,12 @@ Link to back ends: https://github.com/LyonKhang/LETBackend.git
 ![MySQL Badge]
 
 ## Extension on Visual Studio Code
-### Backend:
+### Server:
 * **Spring Boot Extension Pack v0.2.1**: a stand-alone platform that makes Java productions more streamlined. this extension Provides Java IDE Spring boot to VS Code.
 ![link](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 * **Extension Pack for Java v0.28.0**: Collections of Java extension for VS Code
 ![link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-### Frontend:
+### Client:
 * **JavaScript (ES6) code snippets v1.8.0**: provides Javascripts ES6 syntax for VS Code
  ![link](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 * **JavaScript and TypeScript Nightly v5.6.20240807**: provides for both TypeScript and JavaScript Nightly build and also IntelliSense.
@@ -46,17 +46,17 @@ Link to back ends: https://github.com/LyonKhang/LETBackend.git
 * **Postman v1.2.1**: testing APIs directly in VS Code.
 ![link](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode)
 ## Prerequisites
-### Backend:
+### Server:
 * **Java 17 LTS**: Java JDK for development environmenrt.
 ![link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * **Apache Maven 3.9.5**:a build automation tool used primarily for Java projects.
 ![link](https://maven.apache.org/download.cgi)
-* **Eclipse Temurin Adoptium**:a Prebuilt java OpenJDK Binaries envrioemnt. This need to be installed in order to work with Spring boot.
+* **Eclipse Temurin Adoptium**:a Prebuilt java OpenJDK Binaries envrioemnt. This needs to be installed to work with Spring Boot.
 ![link](https://adoptium.net/temurin/releases/?arch=any&os=windows)
-### Frontend: None
+### Client: None
 ### Development
 * **Visual Studio Code**:Prefer newest version
-* **Postman**: API for offers design,build,test, projects.
+* **Postman**: API for offers design, build, test, and projects.
 ![link](https://www.postman.com/downloads/)
 * **My SQL Workbench**: visual database design tool.
 ![link](https://www.mysql.com/products/workbench/)
@@ -64,13 +64,13 @@ Link to back ends: https://github.com/LyonKhang/LETBackend.git
 ## Installation and Run
 **Installation**:
 Clone repository:
-Backend: https://github.com/LyonKhang/LETBackend.git
+Server: https://github.com/LyonKhang/LETBackend.git
 <br>
-Frontend: https://github.com/LyonKhang/LET-FrontEnd.git
+Client: https://github.com/LyonKhang/LET-FrontEnd.git
 <br>
 Import the project to Visual Studio Code.
 
-### Backend:
+### Server:
 **Setup**:
 1. Go to src/main/resources/application.properties
 2. Change your URL, username, and password so it works with your MySQL workbench.
@@ -80,7 +80,7 @@ Import the project to Visual Studio Code.
 1. On VScode, navigate to Spring Boot Dashboard at the activity bar.
 2. On Spring Boot Dashboard, click run at the apps.
 
-### Frontend:
+### Client:
 
  **Run** 
  
@@ -92,14 +92,31 @@ Import the project to Visual Studio Code.
 ## Architecture
 
 ### Endpoints
-| HTTP          | Endpoint                         | RequestBody  | Response Body | Description           |
-| ------------- |:--------------------------------:| ------------:| -------------:| ----------------------|
-| `GET`         |`/balance/calculateBalance`       |              | `Balance`     | Get total balance     |  
+| HTTP      | Endpoint                         | Request Body | Response Body     | Description                      |
+| ----------|:--------------------------------:| ------------:| -----------------:| ---------------------------------|
+| `GET`     |`/balance/calculateBalance`       |      -       |   `Balance`       | Get total balance                | 
 
-| HTTP          | Endpoint                         | RequestBody  | Response Body | Description           | 
-| ------------- |:--------------------------------:| ------------:| -------------:| ----------------------|
-| `POST`        | `selections/newselections/`      |              | `Selections`  | create a new selection|  
+| HTTP      | Endpoint                         | Request Body | Response Body     | Description                      | 
+| ----------|:--------------------------------:| ------------:| -----------------:| ---------------------------------|
+| `POST`    | `selections/newselections/`      | `Selections` | `Selections`      | Create a new selection           |  
+| `GET`     | `selections/getselections/`      |       -      | `<List<Selection>`| Get  selection                   | 
+| `PUT`     | `selections/editselection/`      | `Selections` | `Selections`      | Edit selection based on id       | 
+| `DELETE`  | `selections/editselection/{id}`  |      -       |       -           | Delete a selection on based on id|
 
+
+| HTTP      | Endpoint                             | Request Body | Response Body | Description                      | 
+| ----------|:------------------------------------:| --------:| -----------------:| ---------------------------------|
+| `POST`    | `spents/newspents/`                  | `Spents` | `Spents`          | create a new spents              |  
+| `GET`     | `spents/getspents/`                  |       -  | `<List<Spents>`   | get  spents                      | 
+| `PUT`     | `spents/editspent/`                  | `Spents` | `Spents`          | edit spents based on id          | 
+| `DELETE`  | `spents/deletespent/{id}`            |      -   |       -           | Delete a spents on based on id   |
+
+| HTTP      | Endpoint                             | Request Body | Response Body | Description                      | 
+| ----------|:------------------------------------:| --------:| -----------------:|----------------------------------|
+| `POST`    | `transactions/newtransactions/`      | `Transactions` | `Transactions`          | create a new transactions              |  
+| `GET`     | `transactions/gettransactions/`      |      -   | `<List<Transactions>`   | get  transactions                      | 
+| `PUT`     | `transactions/edittransaction/`      | `Transactions` | `Transactions`          | edit transactions based on id          | 
+| `DELETE`  | `transactions/deletetransaction/{id}`|      -   |       -           | Delete a transactions on based on id   |
 
 <p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
