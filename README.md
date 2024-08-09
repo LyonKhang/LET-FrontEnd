@@ -92,11 +92,13 @@ Import the project to Visual Studio Code.
 ## Architecture
 
 ### Endpoints
-| HTTP        | Endpoint           | RequestBody  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| HTTP          | Endpoint                         | RequestBody  | Response Body | Description           |
+| ------------- |:--------------------------------:| ------------:| -------------:| ----------------------|
+| `GET`         |`/balance/calculateBalance`       |              | `Balance`     | Get total balance     |  
+
+| HTTP          | Endpoint                         | RequestBody  | Response Body | Description           | 
+| ------------- |:--------------------------------:| ------------:| -------------:| ----------------------|
+| `POST`        | `selections/newselections/`      |              | `Selections`  | create a new selection|  
 
 
 <p align="right">(<a href="#about-the-project">back to top</a>)</p>
@@ -114,6 +116,7 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 * Use My SQL to store JSON and organize it into multiple tables based on categories.
 * Understand the basic React JS on the front-end sides. Another experience is formatting the website to provide services to users.
 * Binding buttons with requests with Axios to backends.
+* Commit effective message from angular js Github.
 
 ## Contributing
 1. Fork this project to to GitHub account
