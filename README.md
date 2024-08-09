@@ -91,7 +91,7 @@ Import the project to Visual Studio Code.
     
 ## Architecture
 
-<img alt="UML_Diagram" width="1400" height="1000" src="LET_diagram.png"/>
+<img alt="UML_Diagram" width="700" height="600" src="LET_diagram.png"/>
 
 ### Endpoints
 | HTTP      | Endpoint                         | Request Body | Response Body     | Description                      |
