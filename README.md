@@ -2,9 +2,8 @@
 ## About The Project
 A whole stack Project that allows tracking user expense activities. Users enter spending activities information into the sites and information. A simple user Site that provides vital information in spreadsheet forms. No need for complex Excel spreadsheets or countless physical papers. This service offers simple user inputs with ReactJS while tracking all information to Java back-ends with Spring Boots and storing it in the MySQL database.
 
-This project used backends 
-This is a front-end GitHub repo.<br>
-Link to back ends: https://github.com/LyonKhang/LETBackend.git
+This is the client-side GitHub repo.<br>
+Link to server side: https://github.com/LyonKhang/LETBackend.git
 ### Table of Contents
 <!-- TABLE OF CONTENTS -->
   * [_About The Project_](#about-the-project)
