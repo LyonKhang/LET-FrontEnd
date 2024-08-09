@@ -91,26 +91,40 @@ Import the project to Visual Studio Code.
     
 ## Architecture
 
+### Endpoints
+| HTTP        | Endpoint           | RequestBody  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
 <p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 ## Experiences Gained
-I learned whole stack operations of an apps with a combinaetion of Spring Boot 3, React JS, MySQL to create a serviceable product:
-1. Spring Boot 3 operations on a back-end sides.
-2. Learn Project LomBok in VS Code
-3. Convert user input into JSON to communicate on both sides.
-4. Use My SQL to stores 
-5. Understand the basic React JS on a front-end sides. Another Experinces is format the website to to provides services to users.
+I learned whole stack operations of apps with a combination of Spring Boot 3, React JS, and MySQL to create a serviceable product:
+* Spring Boot 3 operations on the back-end sides.
+* Use RESTful API design principles:
+   * GET API for a fetch request
+   * POST API for creating JSON data forms.
+   * PUT API for editing existing forms.
+   * DELETE API for deleting requests.
+* Learn Project Lombok in VS Code
+* Convert user input into JSON to communicate on both sides.
+* Use My SQL to store JSON and organize it into multiple tables based on categories.
+* Understand the basic React JS on the front-end sides. Another experience is formatting the website to provide services to users.
+* Binding buttons with requests with Axios to backends.
 
 ## Contributing
-1. Fork this projects to to GitHub account
+1. Fork this project to to GitHub account
 2. Clone this project to your machines.
-3.  Create a new bracnsh where you can make changes
-4.  once finished changes, commit with messages following Commit Message Format
+3.  Create a new branch where you can make changes
+4.  once finished changes, commit with messages following the Commit Message Format
 [Commit Formatting](https://gist.github.com/brianclements/841ea7bffdb01346392c)
 ## License
 This Project uses a GPL-3.0 license (2024)
 ## Acknowledgements
-This project use icon and badge at ![Shields.io](https://shields.io/).
+This project uses icons and badges at![Shields.io](https://shields.io/).
 <p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 
