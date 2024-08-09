@@ -76,17 +76,16 @@ Import the project to Visual Studio Code.
 2. Change your URL, username, and password so it works with your MySQL workbench.
 
 **Run**
-
 1. On VScode, navigate to Spring Boot Dashboard at the activity bar.
 2. On Spring Boot Dashboard, click run at the apps.
-
+3. go to localhost:8080 on web address bar.
 ### Client:
 
  **Run** 
  
  1. navigate to the project folder 
  2. Open the command prompt and type: npm start
-
+ 3. It will located at localhost:3000 on web address bar
     <p align="right">(<a href="#about-the-project">back to top</a>)</p>
     
 ## Architecture
