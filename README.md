@@ -143,7 +143,7 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 4.  once finished changes, commit with messages following the Commit Message Format
 [Commit Formatting](https://gist.github.com/brianclements/841ea7bffdb01346392c)
 ## License
-This Project uses a GPL-3.0 license (2024)
+This Project uses MIT license (2024)
 ## Acknowledgements
 This project uses icons and badges at![Shields.io](https://shields.io/).
 <p align="right">(<a href="#about-the-project">back to top</a>)</p>
