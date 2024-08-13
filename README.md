@@ -146,6 +146,7 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 This Project uses MIT license (2024)
 ## Acknowledgements
 This project uses icons and badges at![Shields.io](https://shields.io/).
+Commit Message is greatly inspired by ![angular](https://github.com/angular/angular)'s committing message body convention. This technique greatly keeps the message short but very effective.
 <p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 
