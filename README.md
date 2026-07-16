@@ -88,9 +88,6 @@ Import the project to Visual Studio Code.
  3. It will located at localhost:3000 on web address bar
     <p align="right">(<a href="#about-the-project">back to top</a>)</p>
     
-## Architecture
-
-<img alt="UML_Diagram" width="700" height="600" src="LET_diagram.png"/>
 
 ### Endpoints
 | HTTP      | Endpoint                         | Request Body | Response Body     | Description                      |
