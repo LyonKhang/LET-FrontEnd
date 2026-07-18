@@ -1,3 +1,7 @@
+body{
+  background-color: #8fb8c9;
+}
+
 table {
   display: grid;
   border-collapse: collapse;
@@ -30,7 +34,7 @@ td {
 th {
   position: sticky;
   top: 0;
-  background: #f3945b;
+  background: #e76f51;
   text-align: left;
   font-weight: normal;
   font-size: 1.1rem;
@@ -60,7 +64,7 @@ h2 {
   text-align: center;
 }
 h1 {
-  color: #fc4100;
+  color: #e76f51;
   margin: 0.25rem 0.5rem 0.5rem 0.5rem;
   font-size: 2.2rem;
   font-weight: 200px;
@@ -78,7 +82,7 @@ h1 {
   padding: rem;
   display: flex;
   align-self: center;
-  background: #2c4e80;
+  background: #264653;
 }
 .container {
   display: grid;

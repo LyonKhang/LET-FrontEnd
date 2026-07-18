@@ -70,7 +70,7 @@ export const AddTransaction = () => {
         <div>
             <React.Fragment>
                 {/* Button to open */}
-                <Button variant="outlined" onClick={handleClickOpen} sx={{ m: 1, width: '20ch', }}>
+                <Button variant="contained" color="primary" onClick={handleClickOpen} sx={{ m: 1, width: '20ch' }}>
                     New
                 </Button>
 
@@ -275,7 +275,7 @@ export const EditTransaction = () => {
         <div>
             <React.Fragment>
                 {/* Button to open */}
-                <Button variant="outlined" onClick={handleClickOpen} sx={{ m: 1, width: '20ch', }} >
+                <Button variant="contained" color="warning" onClick={handleClickOpen} sx={{ m: 1, width: '20ch' }}>
                     Edit
                 </Button>
 
@@ -422,7 +422,7 @@ export const DeleteTransaction = () => {
         <div>
             <React.Fragment>
                 {/* Button to open */}
-                <Button variant="outlined" onClick={handleClickOpen} sx={{ m: 1, width: '20ch', }}>
+                <Button variant="contained" color="error" onClick={handleClickOpen} sx={{ m: 1, width: '20ch' }}>
                     Delete
                 </Button>
 
