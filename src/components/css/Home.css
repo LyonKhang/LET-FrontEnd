@@ -1,0 +1,37 @@
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  margin: 16px auto;
+  max-width: 700px;
+  background: #e9c46a;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home-actions .MuiButton-root {
+  min-width: 120px;
+  padding: 14px 24px;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.home-actions .MuiButton-containedPrimary {
+  background-color: #2a9d8f;
+}
+
+.home-actions .MuiButton-containedWarning {
+  background-color: #2a9d8f;
+}
+
+.home-actions .MuiButton-containedError {
+  background-color: #2a9d8f;
+}
+
+.home-actions .MuiButton-root:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
