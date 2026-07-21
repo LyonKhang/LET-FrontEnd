@@ -47,7 +47,7 @@ export const AddTransaction = () => {
         console.log(formatted);
         try {
             //sent reuest in JSON
-            const response = await axios.post('http://localhost:8080/transactions/newtransactions', {
+            const response = await axios.post('http://localhost:8081/transactions/newtransactions', {
                 textTitle: name,
                 amountEnter: number,
                 exchangeDate: formatted,
@@ -184,10 +184,23 @@ export const AddTransaction = () => {
 //GET
 export const GetTransaction = () => {
     const [data, setData] = useState([]);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            axios.get("http://localhost:8081/transactions/gettransactions")
+                .then(res => {
+                    console.log("Response:", res.data);
+                    console.log("Is array?", Array.isArray(res.data));
+                    setData(res.data);
+                })
+                .catch(err => console.error(err));
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
     // run every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get(`http://localhost:8080/transactions/gettransactions`)
+            axios.get(`http://localhost:8081/transactions/gettransactions`)
                 .then(res => setData(res.data))
                 .catch(err => console.error(err));
         }, 5000);
@@ -252,7 +265,7 @@ export const EditTransaction = () => {
         event.preventDefault();
         const formatted = date.format('MM-DD-YYYY');
         try {
-            const response = await axios.put('http://localhost:8080/transactions/edittransaction', {
+            const response = await axios.put('http://localhost:8081/transactions/edittransaction', {
                 id: id,
                 textTitle: name,
                 amountEnter: number,
@@ -412,7 +425,7 @@ export const DeleteTransaction = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.delete(`http://localhost:8080/transactions/deletetransaction/${labelid}`);
+            const response = await axios.delete(`http://localhost:8081/transactions/deletetransaction/${labelid}`);
             console.log('Server response:', labelid);
         } catch (error) {
             console.error('Error sending DELETE request:', error);
@@ -467,7 +480,7 @@ export const GetCalcualteBalance = () => {
     // run every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get(`http://localhost:8080/balance/calculateBalance`)
+            axios.get(`http://localhost:8081/balance/calculateBalance`)
                 .then(res => setBalance(res.data))
                 .catch(err => console.error(err));
         }, 5000);
