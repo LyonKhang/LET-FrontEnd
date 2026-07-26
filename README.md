@@ -131,7 +131,7 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 * Use My SQL to store JSON and organize it into multiple tables based on categories.
 * Understand the basic React JS on the front-end sides. Another experience is formatting the website to provide services to users.
 * Binding buttons with requests with Axios to backends.
-* Commit effective message from angular js Github.
+* Commit with effective messages for tracking progress.
 
 ## Contributing
 1. Fork this project to to GitHub account
