@@ -72,20 +72,20 @@ Import the project to Visual Studio Code.
 
 ### Server:
 **Setup**:
-1. Go to src/main/resources/application.properties
-2. Change your URL, username, and password so it works with your MySQL Workbench.
+1. Create .env
+2. Create MYSQL_ROOT_PASSWORD,MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD in .env
+3.  Star up Docker
 
 **Run**
-1. On VS Code, navigate to the Spring Boot Dashboard in the activity bar.
-2. On the Spring Boot Dashboard, click Run on the apps.
-3. Go to localhost:8080 in the web address bar.
+1. (Linux):on the root folder, type "docker compose build"
+2. type "docker compose up -d"
+3. it will located on localhost:8081 on the web address bar.
 ### Client:
-
  **Run** 
- 
  1. Navigate to the project folder 
- 2. Open the command prompt and type: npm start
- 3. It will located at localhost:3000 on web address bar
+ 2. (Linux):on the root folder, type "docker compose build"
+ 3. type "docker compose up -d"
+ 4. It will located at localhost:3000 on web address bar
     <p align="right">(<a href="#about-the-project">back to top</a>)</p>
     
 
