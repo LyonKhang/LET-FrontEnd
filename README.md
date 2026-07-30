@@ -31,16 +31,16 @@ Link to server side: https://github.com/LyonKhang/LETBackend.git
 
 ## Extension on Visual Studio Code
 ### Server:
-* **Spring Boot Extension Pack v0.2.1**: a stand-alone platform that makes Java productions more streamlined. this extension Provides Java IDE Spring boot to VS Code.
+* **Spring Boot Extension Pack v0.2.1**: a stand-alone platform that makes Java production more streamlined. This extension provides a Java IDE for Spring Boot to VS Code.
 ![link](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 * **Extension Pack for Java v0.28.0**: Collections of Java extension for VS Code
 ![link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 ### Client:
 * **JavaScript (ES6) code snippets v1.8.0**: provides Javascripts ES6 syntax for VS Code
  ![link](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
-* **JavaScript and TypeScript Nightly v5.6.20240807**: provides for both TypeScript and JavaScript Nightly build and also IntelliSense.
+* **JavaScript and TypeScript Nightly v5.6.20240807**: provides support for both TypeScript and JavaScript Nightly builds and also IntelliSense.
 ![link](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
-* **HTML CSS Support v2.0.10**: provide HTML and CSS Intellisense for VS Code.
+* **HTML CSS Support v2.0.10**: provides HTML and CSS IntelliSense for VS Code.
 ![link](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
 * **Postman v1.2.1**: testing APIs directly in VS Code.
 ![link](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode)
@@ -50,7 +50,7 @@ Link to server side: https://github.com/LyonKhang/LETBackend.git
 ![link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * **Apache Maven 3.9.5**:a build automation tool used primarily for Java projects.
 ![link](https://maven.apache.org/download.cgi)
-* **Eclipse Temurin Adoptium**:a Prebuilt java OpenJDK Binaries envrioemnt. This needs to be installed to work with Spring Boot.
+* **Eclipse Temurin Adoptium**:a prebuilt Java OpenJDK binaries environment. This needs to be installed to work with Spring Boot.
 ![link](https://adoptium.net/temurin/releases/?arch=any&os=windows)
 ### Client: None
 ### Development
@@ -73,17 +73,17 @@ Import the project to Visual Studio Code.
 ### Server:
 **Setup**:
 1. Go to src/main/resources/application.properties
-2. Change your URL, username, and password so it works with your MySQL workbench.
+2. Change your URL, username, and password so it works with your MySQL Workbench.
 
 **Run**
-1. On VScode, navigate to Spring Boot Dashboard at the activity bar.
-2. On Spring Boot Dashboard, click run at the apps.
-3. go to localhost:8080 on web address bar.
+1. On VS Code, navigate to the Spring Boot Dashboard in the activity bar.
+2. On the Spring Boot Dashboard, click Run on the apps.
+3. Go to localhost:8080 in the web address bar.
 ### Client:
 
  **Run** 
  
- 1. navigate to the project folder 
+ 1. Navigate to the project folder 
  2. Open the command prompt and type: npm start
  3. It will located at localhost:3000 on web address bar
     <p align="right">(<a href="#about-the-project">back to top</a>)</p>
@@ -142,9 +142,9 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 ## License
 This Project uses MIT license (2024)
 ## Acknowledgements
-This project uses icons and badges at![Shields.io](https://shields.io/).
-Commit Message is greatly inspired by ![angular](https://github.com/angular/angular)'s committing message body convention. This technique greatly keeps the message short but very effective.
-<p align="right">(<a href="#about-the-project">back to top</a>)</p>
+This project uses icons and badges at ![Shields.io](https://shields.io/).
+
+The commit message is greatly inspired by ![Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)'s committing message body convention. This technique greatly keeps the message short but very effective.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
