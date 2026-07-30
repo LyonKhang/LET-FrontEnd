@@ -138,7 +138,7 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 2. Clone this project to your machines.
 3.  Create a new branch where you can make changes
 4.  once finished changes, commit with messages following the Commit Message Format
-[Commit Formatting](https://gist.github.com/brianclements/841ea7bffdb01346392c)
+![Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
 ## License
 This Project uses MIT license (2024)
 ## Acknowledgements
