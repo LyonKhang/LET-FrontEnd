@@ -48,7 +48,7 @@ Link to server side: https://github.com/LyonKhang/LETBackend.git
 ### Server:
 * **Java 17 LTS**: Java JDK for development environmenrt.
 ![link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-* **Apache Maven 3.9.5**:a build automation tool used primarily for Java projects.
+* **Apache Maven 4.0.0**:a build automation tool used primarily for Java projects.
 ![link](https://maven.apache.org/download.cgi)
 * **Eclipse Temurin Adoptium**:a prebuilt Java OpenJDK binaries environment. This needs to be installed to work with Spring Boot.
 ![link](https://adoptium.net/temurin/releases/?arch=any&os=windows)
