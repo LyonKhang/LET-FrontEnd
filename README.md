@@ -32,33 +32,33 @@ Link to server side: https://github.com/LyonKhang/LETBackend.git
 ## Extension on Visual Studio Code
 ### Server:
 * **Spring Boot Extension Pack v0.2.1**: a stand-alone platform that makes Java production more streamlined. This extension provides a Java IDE for Spring Boot to VS Code.
-![link](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
+[link](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
 * **Extension Pack for Java v0.28.0**: Collections of Java extension for VS Code
-![link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+[link](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 ### Client:
 * **JavaScript (ES6) code snippets v1.8.0**: provides Javascripts ES6 syntax for VS Code
- ![link](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+[link](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
 * **JavaScript and TypeScript Nightly v5.6.20240807**: provides support for both TypeScript and JavaScript Nightly builds and also IntelliSense.
 ![link](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
 * **HTML CSS Support v2.0.10**: provides HTML and CSS IntelliSense for VS Code.
-![link](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+[link](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
 * **Postman v1.2.1**: testing APIs directly in VS Code.
-![link](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode)
+[link](https://marketplace.visualstudio.com/items?itemName=Postman.postman-for-vscode)
 ## Prerequisites
 ### Server:
 * **Java 17 LTS**: Java JDK for development environmenrt.
-![link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+[link](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 * **Apache Maven 4.0.0**:a build automation tool used primarily for Java projects.
-![link](https://maven.apache.org/download.cgi)
+[link](https://maven.apache.org/download.cgi)
 * **Eclipse Temurin Adoptium**:a prebuilt Java OpenJDK binaries environment. This needs to be installed to work with Spring Boot.
-![link](https://adoptium.net/temurin/releases/?arch=any&os=windows)
+[link](https://adoptium.net/temurin/releases/?arch=any&os=windows)
 ### Client: None
 ### Development
 * **Visual Studio Code**:Prefer newest version
 * **Postman**: API for offers design, build, test, and projects.
-![link](https://www.postman.com/downloads/)
+[link](https://www.postman.com/downloads/)
 * **My SQL Workbench**: visual database design tool.
-![link](https://www.mysql.com/products/workbench/)
+[link](https://www.mysql.com/products/workbench/)
 
 ## Installation and Run
 **Installation**:
@@ -137,14 +137,14 @@ I learned whole stack operations of apps with a combination of Spring Boot 3, Re
 1. Fork this project to to GitHub account
 2. Clone this project to your machines.
 3.  Create a new branch where you can make changes
-4.  once finished changes, commit with messages following the Commit Message Format
-![Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
+4.  Once finished changes, commit with messages following the Commit Message Format
+[Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/).
 ## License
 This Project uses MIT license (2024)
 ## Acknowledgements
 This project uses icons and badges at ![Shields.io](https://shields.io/).
 
-The commit message is greatly inspired by ![Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)'s committing message body convention. This technique greatly keeps the message short but very effective.
+The commit message is greatly inspired by [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/)'s committing message body convention. This technique greatly keeps the message short but very effective.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
